@@ -1,0 +1,123 @@
+<section class="experience">
+    <form [formGroup]="formValue">
+        <div class="container">
+            <div style="display: flex;">
+                <div class="textOnInput">
+                    <label for="Cname">Company Name <span class="red-span">(*)</span></label>
+                    <input id="Cname" formControlName="companyName" style="width: 300px; margin: 10px; padding: 10px;">
+
+                    <div *ngIf="formControls.companyName.touched && formControls.companyName.invalid"
+                        class="invalid-field">This is mandatory field</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="DOL">Designation on leaving <span class="red-span">(*)</span></label>
+                    <input id="DOL" formControlName="designationOnLeave"
+                        style="width: 300px; margin: 10px; padding: 10px;">
+                    <div *ngIf="formControls.designationOnLeave.touched && formControls.designationOnLeave.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="Address">Experience Certificate</label><br>
+                    <input type="file" formControlName="experienceCertificate"
+                        style="width: 250px; margin: 10px;">
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="textOnInput">
+                    <label for="Address">Address <span class="red-span">(*)</span></label>
+                    <textarea id="Address" formControlName="address"
+                        style="width: 300px; margin: 10px;"></textarea>
+                    <div *ngIf="formControls.address.touched && formControls.address.invalid" class="invalid-field">
+                        This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="IndustryType">Industry Type</label>
+                    <select id="IndustryType" formControlName="industryType"
+                        style="width: 300px; margin: 10px;padding: 10px;">
+                        <option value="IT">IT</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Services">Services</option>
+                    </select>
+                </div>
+                <div class="textOnInput">
+                    <label for="salaryslip">Salary Slip</label><br>
+                    <input type="file" formControlName="salarySlip" style="width: 250px; margin: 10px;">
+                </div>
+            </div>
+            <div style="display:flex ;">
+                <div class="textOnInput">
+                    <label for="FromDate">From Date <span class="red-span">(*)</span></label>
+                    <input type="text" onfocus="(this.type='date')" formControlName="fromDate" id="FromDate"
+                        style="width: 300px; margin: 10px; padding: 10px;">
+                    <div *ngIf="formControls.fromDate.touched && formControls.fromDate.invalid" class="invalid-field">
+                        This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="Number">Contact Number</label>
+                    <input type="number" formControlName="contactNumber" id="Number"
+                        style="width: 300px; margin: 10px; padding: 10px;">
+
+                </div>
+                <div class="textOnInput">
+                    <label for="ReileveingLetter">Reileveing Letter</label><br>
+                    <input type="file" formControlName="relievingLetter"
+                        style="width: 250px; margin: 10px;">
+                </div>
+            </div>
+            <div style="display: flex ;">
+                <div class="textOnInput">
+                    <label for="ToDate">To Date <span class="red-span">(*)</span></label>
+                    <input type="text" onfocus="(this.type='date')" formControlName="toDate"
+                        style="width: 300px; margin: 10px ;padding: 10px;" id="ToDate" />
+                    <div *ngIf="formControls.toDate.touched && formControls.toDate.invalid" class="invalid-field">
+                        This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="Number">Roles</label>
+                    <input type="text" formControlName="roles" style="width: 300px; margin: 10px; padding: 10px;"
+                        id="Number">
+
+                </div>
+            </div>
+            <div style="display: flex ;">
+                <div class="textOnInput">
+                    <label for="JobTitle">Job Title</label>
+                    <input id="JobTitle" formControlName="jobTitle" style="width: 300px; margin: 10px; padding: 10px;">
+                </div>
+                <div class="textOnInput">
+                    <label for="KeyExperince">Key Experince</label>
+                    <input id="KeyExperince" formControlName="keyExperience"
+                        style="width: 300px; margin-left:15px; padding: 10px;margin: 10px;">
+                </div>
+            </div>
+            <div style="display: flex ;">
+                <div class="textOnInput">
+                    <label for="Salary">Salary On leaving</label>
+                    <input type="text" formControlName="salaryOnLeaving" id="Salary"
+                        style="width: 300px; margin: 10px; padding: 10px;">
+
+                </div>
+                <div class="textOnInput">
+                    <label for="Curency">Currency</label>
+                    <select id="Currency" formControlName="currency" style="width: 300px; margin: 10px;padding: 10px;">
+                        <option value="INR">INR</option>
+                        <option value="Dollar">Dollar</option>
+                        <option value="Pound">Pound</option>
+                    </select>
+                </div>
+                <div class="textOnInput">
+                    <label for="Reason">Reason for leaving <span class="red-span">(*)</span></label>
+                    <input id="Reason" formControlName="reasonForLeaving"
+                        style="width: 250px; margin: 10px; padding: 10px; ">
+                    <div style="margin-left: 100px;"
+                        *ngIf="formControls.reasonForLeaving.touched && formControls.reasonForLeaving.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <mat-dialog-actions align="center">
+        <button mat-raised-button color="warn" mat-dialog-close style="margin-right: 20px;">Cancel</button>
+        <button mat-raised-button color="primary" (click)="postAndUpdateExperienceDetails()">{{actionButton}}</button>
+    </mat-dialog-actions>
+</section>

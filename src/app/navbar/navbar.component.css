@@ -1,0 +1,79 @@
+/* Navbar Styling */
+mat-toolbar-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left-side{
+    width: 5%;
+}
+.right-side{
+    display: flex;
+    width: 12%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.middle-side{
+    width: 35%;
+}
+.pic{
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.left-profile{
+    display: flex;
+    flex-direction: row;
+}
+.right-profile{
+    cursor: pointer;
+}
+.right-profile :hover{
+    transform: scale(1.05);
+}
+
+/* Badges in right menu */
+.badge-blue{
+    background-color: blue;
+    color: white;
+    padding: 0 2px;
+    border-radius: 5px;
+    z-index: 1;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.badge-orange{
+    background-color: orange;
+    color: white;
+    padding: 0 2px;
+    border-radius: 5px;
+    z-index: 1;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.badge-red{
+    background-color: red;
+    color: white;
+    padding: 0 2px;
+    border-radius: 5px;
+    z-index: 1;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.badge-green{
+    background-color: green;
+    color: white;
+    padding: 0px 2px;
+    border-radius: 5px;
+    z-index: 1;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* Tooltip styling in Right Menu */
+::ng-deep .tooltip-background{
+    background-color: black;
+    color: white;
+    font-size: small;
+}

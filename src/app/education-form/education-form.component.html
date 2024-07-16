@@ -1,0 +1,138 @@
+<section class="education">
+    <form [formGroup]="formValue" novalidate>
+        <div class="cotainer">
+            <div style="display: flex;">
+                <div class="textOnInput">
+                    <label for="establishment">Establishment Type <span class="red-span">(*)</span></label>
+                    <input type="text" formControlName="typeOfEstablishment" id="nameField"
+                        style="width: 300px; margin: 10px;padding: 10px; ">
+                    <div *ngIf="formControls.typeOfEstablishment.touched && formControls.typeOfEstablishment.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="majorField">Major Field <span class="red-span">(*)</span></label>
+                    <input type="text" formControlName="majorField" id="nameField"
+                        style="width: 300px;  margin: 10px; padding: 10px; ">
+                    <div *ngIf="formControls.majorField.touched && formControls.majorField.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <!-- <div class="textOnInput">
+                    <label for="nameField">Amount</label>
+                    <input type="number" formControlName="amount" id="nameField"
+                        style="width: 120px; margin: 10px;padding: 10px;margin-left: 17px;">
+                </div> -->
+                <!-- <div class="textOnInput">
+                    <label for="establishment">Currency</label>
+                    <select id="establishment" style="width: 120px; margin: 10px; padding: 10px;"
+                        formControlName="currency">
+                        <option value="INR">INR</option>
+                        <option value="Dollar">Dollar</option>
+                        <option value="Pound">Pound</option>
+                    </select>
+                </div> -->
+            </div>
+            <div style="display: flex ;">
+                <div class="textOnInput">
+                    <label for="NameOfestablish">Establishment Name <span class="red-span">(*)</span></label>
+                    <input type="text" formControlName="nameOfEstablishment" id="nameField"
+                        style="width: 300px; margin: 10px;padding: 10px; ">
+                    <div *ngIf="formControls.nameOfEstablishment.touched && formControls.nameOfEstablishment.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="minorField">Minor Field</label>
+                    <input type="text" formControlName="minorField" id="nameField"
+                        style="width: 300px; margin: 10px; padding: 10px;">
+                </div>
+                <div class="textOnInput">
+                    <label for="minorField" style="margin-top:-50px;">Reimbursment Date</label>
+                    <input type="text" id="nameField" onfocus="(this.type='password')"
+                        style="width: 280px; margin: 10px;padding: 10px;margin-left: 20px; "
+                        formControlName="reimbursmentDate">
+                </div>
+            </div>
+            <div style="display: flex ;">
+                <div class="textOnInput">
+                    <label for="Discipline">Discipline <span class="red-span">(*)</span></label>
+                    <input id="Discipline" style="width: 300px; margin: 10px; padding: 10px;"
+                        formControlName="discipline">
+                    <div *ngIf="formControls.discipline.touched && formControls.discipline.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="AffiliatedTo">Affiliation <span class="red-span">(*)</span></label>
+                    <input type="text" style="width: 300px; margin: 10px;padding: 10px; "
+                        formControlName="affiliation" />
+                    <div *ngIf="formControls.affiliation.touched && formControls.affiliation.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="breaks">Education Break</label>
+                    <textarea rows="2" id="breaks" style="width: 280px; margin: 10px;margin-left: 20px;"
+                        formControlName="breakExplaination"></textarea>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="textOnInput">
+                    <label for="breaks">Passing Year <span class="red-span">(*)</span></label>
+                    <input type="text" style="width: 300px; margin: 10px;padding: 10px; " formControlName=passingYear>
+                    <div *ngIf="formControls.passingYear.touched && formControls.passingYear.invalid"
+                        class="invalid-field">This is mandatory field.</div>
+                </div>
+                <div class="textOnInput">
+                    <label for="Address">Institute Address</label>
+                    <textarea id="Address" style="width: 300px; margin: 10px;"
+                        formControlName="addressOfInstitution"></textarea>
+                </div>
+                <div class="textOnInput">
+                    <label for="Address">Upload</label><br>
+                    <input type="file" style="width: 250px; margin: 10px;margin-left: 20px;" formControlName="upload" />
+                    <p class="red">Recommended File Upload Size 1MB. File types allowed are .doc, .jpeg, .zip, .pdf
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div class="textOnInput">
+                    <label for="Grade">Grade</label>
+                    <input id="Grade" style="width: 300px; margin: 10px;padding: 10px;" formControlName="grade">
+                </div>
+                <div class="textOnInput">
+                    <label for="AttendedFrom">Attended From</label>
+                    <input type="text" onfocus="(this.type='date')" id="nameField"
+                        style="width: 300px; margin: 10px; padding: 10px;" formControlName="attendedFrom" />
+
+                </div>
+            </div>
+
+            <div style="display:flex;">
+                <div class="textOnInput">
+                    <label for="Level">Level</label>
+                    <input id="Level" style="width: 300px; margin: 10px;padding: 10px;" formControlName="level">
+                </div>
+                <div class="textOnInput">
+                    <label for="AttendedTo">Attended To</label>
+                    <input type="text" onfocus="(this.type='date')" id="AttendedTo"
+                        style="width: 300px; margin: 10px;padding: 10px;">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div class="textOnInput">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="AttendedTo" style="width: 300px; margin: 10px;padding: 10px;"
+                        formControlName="subject">
+                </div>
+                <div class="textOnInput">
+                    <label for="sponsor">Company Sponsored</label>
+                    <input type="text" id="AttendedTo" style="width: 300px; margin: 10px; padding: 10px;"
+                        formControlName="companySponsored">
+                </div>
+            </div>
+        </div>
+    </form>
+    <mat-dialog-actions align="center">
+        <button mat-raised-button id="cancel" mat-dialog-close style="margin-right: 20px;">Cancel</button>
+        <button mat-raised-button color="primary" (click)="postAndUpdateEducationDetails()">{{actionButton}}</button>
+    </mat-dialog-actions>
+</section>

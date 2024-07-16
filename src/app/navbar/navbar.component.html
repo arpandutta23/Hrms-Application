@@ -1,0 +1,116 @@
+<mat-sidenav-container>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <div class="left-side">
+                <button mat-icon-button>
+                    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+                </button>
+            </div>
+            <img src="../../assets/images/wissenlogo-removebg-preview.png" alt="logo">
+            <div class="middle-side">
+                <div class="middle-profile">
+                    <h1><b>HRMS</b>-Personal Details</h1>
+                </div>
+            </div>
+            <div class="right-side">
+                <div matBadge="4" matBadgeOverlap="true" matBadgeSize="small" class="right-profile"><a class="notify">
+                        <mat-icon>notifications_none</mat-icon>
+                    </a></div>
+                <div class="right-profile">
+                    <img class="pic" src="../../assets/businessman (1).png" alt="pic">
+                </div>
+                <div class="right-profile">
+                    <button class="RightH" mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-toolbar-row>
+        <mat-menu #menu="matMenu">
+            <mat-nav-list>
+                <a mat-list-item>
+                    <mat-icon>update</mat-icon> Updates
+                    <span class="badge-blue" matTooltip="You have 10 new Updates" matTooltipClass="tooltip-background"
+                        matTooltipPosition="above">10</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon>message</mat-icon> Messages
+                    <span class="badge-orange" matTooltip="You have 25 Messages"
+                        matTooltipClass="tooltip-background" matTooltipPosition="above">25</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon>task</mat-icon> Tasks
+                </a>
+                <a mat-list-item>
+                    <mat-icon>add_comment</mat-icon> Comments
+                    <span class="badge-red" matTooltip="You have 50 Comments"
+                        matTooltipClass="tooltip-background" matTooltipPosition="above">50</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon>person</mat-icon> Profile
+                </a>
+                <a mat-list-item>
+                    <mat-icon>settings</mat-icon> Settings
+                </a>
+                <a mat-list-item>
+                    <mat-icon>payment</mat-icon> Payments
+                    <span class="badge-green" matTooltip="12 Payments Due"
+                        matTooltipClass="tooltip-background" matTooltipPosition="above">12</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon>poll</mat-icon> Projects
+                    <span class="badge-blue" matTooltip="You've completed 14 Projects"
+                        matTooltipClass="tooltip-background" matTooltipPosition="above">14</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon>lock</mat-icon> Lock Account
+                </a>
+                <a mat-list-item>
+                    <mat-icon>logout</mat-icon> Logout
+                </a>
+
+            </mat-nav-list>
+        </mat-menu>
+    </mat-toolbar>
+    <mat-sidenav #sidenav mode="side" class="side-nav">
+        <mat-toolbar>
+            <mat-icon>dashboard</mat-icon> &nbsp; Dashboard
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item>
+                <mat-icon aside-icon>water_drop</mat-icon>&nbsp; Employee Records
+            </a>
+            <a mat-list-item>
+                <mat-icon>edit</mat-icon>&nbsp; Org Structure
+            </a>
+            <a mat-list-item>
+                <mat-icon>edit</mat-icon>&nbsp; Employee Engagement
+            </a>
+            <a mat-list-item>
+                <mat-icon>work</mat-icon>&nbsp; Workforce
+            </a>
+            <a mat-list-item>
+                <mat-icon>work_outline</mat-icon>&nbsp; Attendence
+            </a>
+            <a mat-list-item>
+                <mat-icon>work_off</mat-icon>&nbsp; Leaves
+            </a>
+            <a mat-list-item>
+                <mat-icon>edit</mat-icon>&nbsp; Access Logs
+            </a>
+            <a mat-list-item>
+                <mat-icon>edit</mat-icon>&nbsp; Timesheet
+            </a>
+            <a mat-list-item>
+                <mat-icon>exit_to_app</mat-icon>&nbsp; Transfer
+            </a>
+            <a mat-list-item>
+                <mat-icon>edit</mat-icon>&nbsp; Promotion
+            </a>
+            <a mat-list-item>
+                <mat-icon>edit</mat-icon>&nbsp; Shift Roaster
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <app-dashboard></app-dashboard>
+</mat-sidenav-container>

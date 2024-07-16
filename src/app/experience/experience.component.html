@@ -1,0 +1,72 @@
+<div class="profileborder3">
+    <div class="aer">
+        <button class="add" mat-icon-button color="primary" matTooltip="Add" matTooltipPosition="above"
+            (click)="openDialog()" matTooltipClass="tooltip-dark">
+            <mat-icon>add_box</mat-icon>
+        </button>
+        <button class="edit" mat-icon-button matTooltip="Edit" matTooltipPosition="above"
+            (click)="editExperienceDetails(rowData)" [disabled]="buttonDisabled" matTooltipClass="tooltip-dark">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button class="remove" mat-icon-button color="warn" matTooltip="Delete" matTooltipPosition="above"
+            (click)="deleteExperienceDetails(rowData.id)" [disabled]="buttonDisabled" matTooltipClass="tooltip-dark">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+    <div class="tab">
+        <ngx-loading-bar [includeSpinner]="true" [fixed]="false" color="#6F86CE" height="4px"></ngx-loading-bar>
+        <div>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Select </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-radio-button value="{{row | json}}" (change)=" radioButtonChangeEvent($event)"
+                                name="radio_checked"></mat-radio-button>
+                        </td>
+                    </ng-container>
+    
+                    <ng-container matColumnDef="companyName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+                        <td mat-cell *matCellDef="let row"> {{row.companyName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="designationOnLeave">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Designation </th>
+                        <td mat-cell *matCellDef="let row"> {{row.designationOnLeave}} </td>
+                    </ng-container>
+
+                    <!-- Fruit Column -->
+                    <ng-container matColumnDef="fromDate">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> From Date </th>
+                        <td mat-cell *matCellDef="let row"> {{row.fromDate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="toDate">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>To Date</th>
+                        <td mat-cell *matCellDef="let row"> {{row.toDate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="reasonForLeaving">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Reason For Leaving</th>
+                        <td mat-cell *matCellDef="let row"> {{row.reasonForLeaving}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="passingYear">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Passing Year </th>
+                        <td mat-cell *matCellDef="let row"> {{row.passingYear}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="comments">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Comments </th>
+                        <td mat-cell *matCellDef="let row"> {{row.comments}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

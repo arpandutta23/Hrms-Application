@@ -1,0 +1,94 @@
+<mat-sidenav-container *ngFor="let x of data">
+    <mat-sidenav-content class="dashboard">
+        <div>
+            <div class="outborder">
+                <img src="../../assets/businessman (1).png" class="profilepic" alt="profilepic">
+                <div class="profileborder">
+                    <div class="left-profile">
+                        <div class="innerBox1">
+                            <h2 class="name weight-font"><span>
+                                    <i class="fa-solid fa-user fa-xs"></i>
+                                </span>
+                                {{x.name}}</h2>
+                            <h2 class="weight-font"><span>
+                                    <i class="fa-solid fa-id-card fa-s">&nbsp;</i>
+                                </span>{{x.EmpId}}</h2>
+                            <h2 class="weight-font">
+                                <span>
+                                    <i class="fa-regular fa-calendar-days fa-lg"></i>
+                                </span>
+                                Joined In:{{x.joining}}
+                            </h2>
+                        </div>
+                        <div class="innerBox2">
+                            <p id="Location" class="weight-font">
+                                <span class="icon-bottom">
+                                         <mat-icon>location_on</mat-icon>
+                                </span>
+                                {{x.address1}}, {{x.address2}}
+                            </p>
+                            <p id="Mail" class="weight-font">
+                                <span class="icon-bottom">
+                                    <mat-icon>mail_outline</mat-icon>
+                                </span>
+                                {{x.email}}
+                            </p>
+                            <p id="empNum" class="weight-font">
+                                <span class="icon-bottom">
+                                    <mat-icon>phone</mat-icon>
+                                </span>
+                                {{x.mobile}}
+                            </p>
+                        </div>
+                        <hr class="line">
+                        <div class="innerBox3">
+                            <div class="bottom-profile">
+                                <p class="weight-font top-profile">Designation</p>
+                                <p class="weight-font">{{x.designation}}</p>
+                            </div>
+                            <div class="bottom-profile top-profile">
+                                <p class="weight-font">Team</p>
+                                <p class="weight-font"> {{x.team}}</p>
+                            </div>
+                            <div class="bottom-profile top-profile">
+                                <p class="weight-font">Reporting Manager</p>
+                                <p class="weight-font">{{x.manager}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rigth-profile">
+                        <div class="top">
+                            <div class="first" [ngClass]="{disabledDiv: disbaleProbation}" matTooltip="Probation"
+                                matTooltipPosition="above" matTooltipClass="tooltip-color">
+                                <img class="p-image" src="../../assets/p-dark-image.jpg" alt="star-image">
+                            </div>
+                            <div class="second" [ngClass]="{disabledDiv: disableConfirmation}" matTooltip="Confirmation"
+                                matTooltipPosition="above" matTooltipClass="tooltip-color">
+                                <img class="c-image" src="../../assets/c-dark-image.png" alt="star-image">
+                            </div>
+                        </div>
+                        <div class="down">
+                            <div class="third" [ngClass]="{disabledDiv: disableReleased}" matTooltip="Released"
+                                matTooltipPosition="above" matTooltipClass="tooltip-color">
+                                <img class="r-image" src="../../assets/r-dark-image.jpg" alt="star-image">
+                            </div>
+                            <div class="fourth" [ngClass]="{disabledDiv: disableFired}" matTooltip="Fired"
+                                matTooltipPosition="above" matTooltipClass="tooltip-color">
+                                <img class="f-image" src="../../assets/f-dark-image1.jpg" alt="star-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profileborder2">
+                <button class="middle-button" routerLinkActive="active-link" mat-button
+                    routerLink="/education">Education</button>
+                <button class="middle-button" routerLinkActive="active-link" mat-button
+                    routerLink="/experience">Experience</button>
+            </div>
+            <div class="profileborder4">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
